@@ -34,7 +34,13 @@ public class BST {
 			}
 			//If it has two child nodes
 			else {
-				//find the leastNode in right subtree
+				// find the leastNode in right subtree
+				// copy the date to node to be deleted
+				// delete the leastNode in right subtree
+				BinaryNode min=minimumElement(currentNode.getRight());
+				currentNode.setData(min.getData());
+				BinaryNode right=deleteNode(currentNode.getRight(), min.getData());
+				currentNode.setRight(right);
 				
 			}
 			
@@ -48,6 +54,12 @@ public class BST {
 			currentNode.setRight(right);
 		}
 		return currentNode;
+	}
+	
+	BinaryNode minimumElement(BinaryNode node) {
+		if(node.getLeft()==null)
+			return node;
+		return minimumElement(node.getLeft());
 	}
 	
 	void traverse() {
