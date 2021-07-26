@@ -12,6 +12,26 @@ public class BST {
 		root=null;
 	}
 	
+	public void search(int data) {
+		BinaryNode node=search(root, data);
+		if(node==null)
+			System.out.println("Data not found");
+		else
+			System.out.println("Data found:"+node.getData());
+	}
+	
+	BinaryNode search(BinaryNode node, int data) {
+		if(node==null)
+			return null;
+		if(node.getData()==data)
+			return node;
+		else if(data<node.getData())
+			return search(node.getLeft(), data);
+		else
+			return search(node.getRight(), data);
+		
+	}
+	
 	void delete(int data) {
 		this.root=deleteNode(root, data);
 	}
