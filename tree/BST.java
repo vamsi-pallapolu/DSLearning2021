@@ -48,7 +48,7 @@ public class BST {
 			else if(currentNode.getLeft()!=null && currentNode.getRight()==null) {
 				currentNode=currentNode.getLeft();
 			}
-			//If it has 
+			//If it has one right child node
 			else if(currentNode.getLeft()==null && currentNode.getRight()!=null) {
 				currentNode=currentNode.getRight();
 			}
