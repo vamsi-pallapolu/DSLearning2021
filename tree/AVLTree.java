@@ -81,7 +81,6 @@ public class AVLTree {
 	
 	
 	private BinaryNode insertNode(BinaryNode currentNode, int data) {
-		System.out.println("---------------------------");
 		if(currentNode==null) {
 			currentNode=createNode(data);
 		}
